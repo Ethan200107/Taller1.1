@@ -1,4 +1,4 @@
-// Taller.cpp : This file contains the 'main' function. Program execution begins and ends there.
+/*// Taller.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include <iostream>
 #include <fstream>
@@ -33,7 +33,7 @@ void mostrarSoftwer(Usuario* user);
 void EliminarElSoftwer(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSoftwares);
 void verSoftwerUsuarios(vector<Sorftwer*> listaSoft);
 
-// Función principal
+// FunciÃ³n principal
 int main()
 {
     vector <Usuario*>usuarios;
@@ -45,7 +45,7 @@ int main()
     login(usuarios,softwares);
 };
 
-// Función para realizar el login de usuarios
+// FunciÃ³n para realizar el login de usuarios
 void login(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSoftwares) {
     while (true) {
         string nombre, contrasena;
@@ -59,7 +59,7 @@ void login(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSoftwares) {
         cout << "-----------------------------" << endl;
         Usuario* user = buscarUsuarioP(nombre, listaUsuarios);
         while (user->getNombre() != nombre or contrasena != user->getContrasena()) {
-            cout << "Error de autenticación. Inténtalo de nuevo." << endl;
+            cout << "Error de autenticaciÃ³n. IntÃ©ntalo de nuevo." << endl;
             string nombre, contrasena;
             cout << "Login" << endl;
             cout << "Nombre: ";
@@ -99,7 +99,7 @@ void login(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSoftwares) {
     }
 }
 
-// Función que muestra el menú para el administrador
+// FunciÃ³n que muestra el menÃº para el administrador
 void MenuAdmin(vector<Sorftwer*> listaSorftwers, vector<Usuario*> listaUsuarios,Usuario* user) {
     bool very = true;
     while (very) {
@@ -142,7 +142,7 @@ void MenuAdmin(vector<Sorftwer*> listaSorftwers, vector<Usuario*> listaUsuarios,
     }
 }
 
-// Función que muestra el menú para usuarios no administradores
+// FunciÃ³n que muestra el menÃº para usuarios no administradores
 void Menu(vector< Sorftwer* > lS, Usuario* user) {
     bool very = true;
     Sorftwer* soft;
@@ -203,7 +203,7 @@ void Menu(vector< Sorftwer* > lS, Usuario* user) {
     }
 }
 
-// Función para ver los softwares de todos los usuarios
+// FunciÃ³n para ver los softwares de todos los usuarios
 void verSoftwerUsuarios(vector<Sorftwer*> listaSoft) {
 	cout << "-----------------------------" << endl;
 	cout << "VerSoftwerUsuarios" << endl;
@@ -219,7 +219,7 @@ void verSoftwerUsuarios(vector<Sorftwer*> listaSoft) {
     
 }
 
-// Función para eliminar un software de la lista de softwares
+// FunciÃ³n para eliminar un software de la lista de softwares
 void EliminarElSoftwer(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSoftwares) {
     cout << "-----------------------------" << endl;
     cout << "EliminarSoftwer" << endl;
@@ -257,7 +257,7 @@ void EliminarElSoftwer(vector<Usuario*> listaUsuarios, vector<Sorftwer*> listaSo
 	
 }
 
-// Función para mostrar los softwares de un usuario
+// FunciÃ³n para mostrar los softwares de un usuario
 void mostrarSoftwer(Usuario* user) {
     vector<Sorftwer*> lS = user->getListSoftwer();
     for (int i = 0; i < lS.size(); i++) {
@@ -265,7 +265,7 @@ void mostrarSoftwer(Usuario* user) {
     }
 }
 
-// Función para eliminar un software de la lista de softwares de un usuario
+// FunciÃ³n para eliminar un software de la lista de softwares de un usuario
 Sorftwer* eliminarSoftwer(Usuario* user) {
 
 	cout << "-----------------------------" << endl;
@@ -301,7 +301,7 @@ Sorftwer* eliminarSoftwer(Usuario* user) {
     cout << "-----------------------------" << endl;
 }
 
-// Función para agregar un software a la lista de softwares de un usuario
+// FunciÃ³n para agregar un software a la lista de softwares de un usuario
 void agregarSoftwer(vector<Sorftwer*> listaSorftwers, Usuario* user) {
     cout << "-----------------------------" << endl;
     cout << "agregarSoftwer" << endl;
@@ -338,7 +338,7 @@ void agregarSoftwer(vector<Sorftwer*> listaSorftwers, Usuario* user) {
     cout << "-----------------------------" << endl;
 }
 
-// Función para buscar un software por nombre en una lista de softwares
+// FunciÃ³n para buscar un software por nombre en una lista de softwares
 Sorftwer* buscarSorftwerP(string nombre,vector<Sorftwer*> listaSorft) {
     for (int i = 0; i < listaSorft.size(); i++) {
         if (listaSorft[i]->getName() == nombre) {
@@ -348,7 +348,7 @@ Sorftwer* buscarSorftwerP(string nombre,vector<Sorftwer*> listaSorft) {
     return nullptr;
 }
 
-// Función para cargar los softwares desde un archivo
+// FunciÃ³n para cargar los softwares desde un archivo
 vector<Sorftwer*> lecturaSoftwares(vector<Usuario*> listaUsuarios) {
     ifstream archivo("Softwer.txt");
     vector < Sorftwer* > sorftwer;
@@ -364,7 +364,7 @@ vector<Sorftwer*> lecturaSoftwares(vector<Usuario*> listaUsuarios) {
         
         string token;
         
-        vector<string> vec;  // Usar un vector dinámico para almacenar los tokens
+        vector<string> vec;  // Usar un vector dinÃ¡mico para almacenar los tokens
         
         while (getline(iss, token, ',')) {
             vec.push_back(token);
@@ -467,7 +467,7 @@ vector<Sorftwer*> lecturaSoftwares(vector<Usuario*> listaUsuarios) {
       return sorftwer;  
     }
 
-// Función para buscar un usuario por nombre en una lista de usuarios
+// FunciÃ³n para buscar un usuario por nombre en una lista de usuarios
 Usuario* buscarUsuarioP(string nombre, vector<Usuario*> listaUsuarios) {
 	for (int i = 0; i < listaUsuarios.size(); i++) {
 		if (listaUsuarios[i]->getNombre() == nombre) {
@@ -477,7 +477,7 @@ Usuario* buscarUsuarioP(string nombre, vector<Usuario*> listaUsuarios) {
 	return nullptr;
 }
 
-// Función para cargar los usuarios desde un archivo
+// FunciÃ³n para cargar los usuarios desde un archivo
 vector<Usuario*> lecturaUsuarios() {
     ifstream archivo("archivoUsuarios.txt");
     vector < Usuario* >usuarios;
@@ -516,8 +516,8 @@ vector<Usuario*> lecturaUsuarios() {
             usuarios.push_back(normal);
         }
         else if (vec[2] != "") {
-            Usuario* niño = new UsuarioNino(nombre, contrasena, edad);
-            usuarios.push_back(niño);
+            Usuario* niÃ±o = new UsuarioNino(nombre, contrasena, edad);
+            usuarios.push_back(niÃ±o);
         }
 
     }
@@ -537,4 +537,4 @@ vector<Usuario*> lecturaUsuarios() {
 //   3. Use the Output window to see build output and other messages
 //   4. Use the Error List window to view errors
 //   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file */
